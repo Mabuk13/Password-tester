@@ -1,0 +1,52 @@
+﻿using System;
+using System.Text;
+using System.Diagnostics;
+
+class Program
+{
+    static Random rand = new Random();
+
+    static void Main()
+    {
+        string p;
+        
+        do
+        {
+            p = GenerateRandomString();
+            Console.WriteLine($"Generated Password: {p}");
+        } while (p != "kurniawan13"); // Keep looping until we guess the password
+
+        OpenWebsite("https://cookiebiscuit.my.canva.site/");
+    }
+
+    static string GenerateRandomString()
+    {
+        const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        int length = rand.Next(8, 21); // Random length between 8 and 20
+        StringBuilder result = new StringBuilder(length);
+
+        for (int i = 0; i < length; i++)
+        {
+            result.Append(chars[rand.Next(chars.Length)]);
+        }
+
+        return result.ToString();
+    }
+
+    static void OpenWebsite(string url)
+    {
+        try
+        {
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = url,
+                UseShellExecute = true
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Failed to open website: {ex.Message}");
+        }
+    }
+}
+
