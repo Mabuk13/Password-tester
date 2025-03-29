@@ -1,1 +1,1 @@
-# Password-tester
+terms and conditions: you cannot use this code as a hack or firewall access and you cannot test this code on websites and/or apps. This repository was made purely for experimentation and if used wrongly i will not take responsibility using this repository will automatically make you agree to  these terms
